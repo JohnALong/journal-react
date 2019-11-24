@@ -1,0 +1,47 @@
+{
+  "moods": [
+    {
+      "id": 1,
+      "label": "exhausted"
+    },
+    {
+      "id": 2,
+      "label": "BrightEyed"
+    },
+    {
+      "id": 3,
+      "label": "amazed"
+    },
+    {
+      "id": 4,
+      "label": "nervous"
+    },
+    {
+      "id": 5,
+      "label": "dejected"
+    }
+  ],
+  "entries": [
+    {
+      "date": "2019-10-14",
+      "conceptsCovered": "manipulating the dom with Javascript",
+      "content": "We learned how to use javascript to make a dynamic file that is repeatable without having to manually create each object. ",
+      "moodId": 4,
+      "id": 1
+    },
+    {
+      "date": "2019-09-14",
+      "conceptsCovered": "manipulating the dom with Javascript",
+      "content": "We learned how to use javascript to make a dynamic file that is repeatable without having to manually create each object. ",
+      "moodId": 4,
+      "id": 2
+    },
+    {
+      "date": "2019-08-14",
+      "conceptsCovered": "manipulating the dom with Javascript",
+      "content": "We learned how to use javascript to make a dynamic file that is repeatable without having to manually create each object. ",
+      "moodId": 4,
+      "id": 3
+    }
+  ]
+}
