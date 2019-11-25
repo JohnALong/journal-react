@@ -36,13 +36,22 @@ class EntryList extends Component {
         console.log("Entry LIST: Render");
 
         return (
-            <div className="container-cards">
-                {this.state.entries.map(entry => <EntryCard
-                    key={entry.id}
-                    entry={entry}
-                    deleteEntry={this.deleteEntry}
-                />)}
-            </div>
+            <>
+                <section className="section-content">
+                    <button type="button"
+                        className="btn"
+                        onClick={() => { this.props.history.push("/entries/new") }}>
+                        New Entry</button>
+                </section>
+                <div className="container-cards">
+                    {this.state.entries.map(entry =>
+                        <EntryCard
+                            key={entry.id}
+                            entry={entry}
+                            deleteEntry={this.deleteEntry}
+                        />)}
+                </div>
+            </>
         )
     }
 }
