@@ -9,17 +9,24 @@ export default {
   },
   delete(id) {
     return fetch(`${remoteURL}/entries/${id}`, {
-        method: "DELETE"
+      method: "DELETE"
     })
-    .then(result => result.json())
+      .then(result => result.json())
   },
-  post(newAnimal) {
+  post(newEntry) {
     return fetch(`${remoteURL}/entries`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newAnimal)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newEntry)
     }).then(data => data.json())
-}
+  },
+  getWithMoods(id) {
+    return fetch(`${remoteURL}/entries/${id}?_expand=mood`)
+  },
+  getMoods() {
+    return fetch(`${remoteURL}/moods`)
+    .then(result => result.json())
+  }
 }

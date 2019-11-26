@@ -5,19 +5,37 @@ import './EntryForm.css'
 class EntryForm extends Component {
     state = {
         date: "",
-        mood: "",
+        moodId: "",
         conceptsCovered: "",
         content: "",
         loadingStatus: false,
+        moods: []
     };
 
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
+        console.log("state to change", stateToChange)
         this.setState(stateToChange);
     };
 
-    /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
+    componentDidMount() {
+        APIManager.getMoods()
+            .then(entry => {
+                this.setState({
+                    date: entry.date,
+                    moodId: entry.moodId,
+                    conceptsCovered: entry.conceptsCovered,
+                    content: entry.content,
+                    loadingStatus: false,
+                });
+            });
+
+        APIManager.getMoods()
+            .then(moods => this.setState({ moods: moods }))
+    }
+
+    /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full entry list
     */
     constructNewEntry = evt => {
         evt.preventDefault();
@@ -27,7 +45,7 @@ class EntryForm extends Component {
             this.setState({ loadingStatus: true });
             const entry = {
                 date: this.state.date,
-                mood: this.state.mood,
+                moodId: parseInt(this.state.moodId),
                 conceptsCovered: this.state.conceptsCovered,
                 content: this.state.content,
             };
@@ -52,22 +70,14 @@ class EntryForm extends Component {
                                 onChange={this.handleFieldChange}
                                 id="date" />
                             <label htmlFor="mood">Mood of the Day</label>
-                            <select id="mood">
-                                <option value="exhausted"
-                                    onChange={this.handleFieldChange}
-                                >Exhausted</option>
-                                <option value="BrightEyed"
-                                    onChange={this.handleFieldChange}
-                                >Bright Eyed</option>
-                                <option value="amazed"
-                                    onChange={this.handleFieldChange}
-                                >amazed</option>
-                                <option value="nervous"
-                                    onChange={this.handleFieldChange}
-                                >nervous</option>
-                                <option value="dejected"
-                                    onChange={this.handleFieldChange}
-                                >dejected</option>
+                            <select className="form-control" id="moodId"
+                                value={this.state.moodId}
+                                onChange={this.handleFieldChange}
+                            >
+                                {this.state.moods.map(mood =>
+                                    <option key={mood.id} value={mood.id}>{mood.label}
+                                    </option>
+                                )}
                             </select>
                             <label htmlFor="conceptsCovered">Concepts Covered</label>
                             <input

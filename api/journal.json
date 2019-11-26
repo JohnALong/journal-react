@@ -133,6 +133,13 @@
       "content": "Worked on next 2 chapters in React, and also began styling my journal with bootstrap & CSS.",
       "moodId": 1,
       "id": 18
+    },
+    {
+      "date": "2019-11-25",
+      "moodId": 3,
+      "conceptsCovered": "react",
+      "content": "using expand/embed and how to dynamically populate a field for drop down menu",
+      "id": 19
     }
   ]
 }
