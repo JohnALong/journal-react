@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom"
 
 class EntryCard extends Component {
     render() {
@@ -8,7 +9,8 @@ class EntryCard extends Component {
                 <div className="card-content">
                     <h2>Date of Entry: <span className="card-entrydate">{this.props.entry.date}</span></h2>
                     <p>Mood of day: {this.props.entry.mood.label}</p>
-                    <button type="button" onClick={() => this.props.deleteEntry(this.props.entry.id)}>Delete</button>
+                    <p>Concepts covered: {this.props.entry.conceptsCovered}</p>
+                    <Link to={`/entries/${this.props.entry.id}`}><button>Details</button></Link>
                 </div>
             </div>
         );

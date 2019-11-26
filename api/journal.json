@@ -30,18 +30,116 @@
       "id": 1
     },
     {
-      "date": "2019-09-14",
-      "conceptsCovered": "manipulating the dom with Javascript",
-      "content": "We learned how to use javascript to make a dynamic file that is repeatable without having to manually create each object. ",
-      "moodId": 4,
-      "id": 2
+      "date": "2019-10-14",
+      "conceptsCovered": "accessing objects now",
+      "content": "using dot and bracket notation how to access deeper elements of an array of objects.  also utilized loops both for, and for in to get info to assist with this.",
+      "id": 2,
+      "moodId": 4
     },
     {
-      "date": "2019-08-14",
-      "conceptsCovered": "manipulating the dom with Javascript",
-      "content": "We learned how to use javascript to make a dynamic file that is repeatable without having to manually create each object. ",
+      "id": 3,
+      "date": "2019-10-14",
+      "conceptsCovered": "loops, concatenation, and back tic syntax",
+      "content": "built a sentence from individual words in an array.  also added information into the sentence using javascript.",
+      "moodId": 1
+    },
+    {
+      "date": "2019-10-14",
+      "conceptsCovered": "group project for html and css",
+      "content": "how to work as a team, build simple page using html and css for styling.  Testing editing function **let's see if the filter mood take 2 works!**",
+      "moodId": 2,
+      "id": 4
+    },
+    {
+      "date": "2019-10-30",
+      "conceptsCovered": "POST",
+      "content": "fetch calls with POST  - corrected fetch call to sort by date posted with earliest at the top of the page",
+      "moodId": 3,
+      "id": 5
+    },
+    {
+      "date": "2019-10-30",
+      "conceptsCovered": "refactoring functions",
+      "content": "testing functionality of code",
+      "moodId": 3,
+      "id": 6
+    },
+    {
+      "date": "2019-10-31",
+      "conceptsCovered": "dynamic html",
+      "content": "Long 3 days - but journal is now dynamically populated, functions are split between modules & imported/exported correctly.",
+      "moodId": 1,
+      "id": 8
+    },
+    {
+      "date": "2019-11-03",
+      "conceptsCovered": "editing entries take 10",
+      "content": "working on completing journal exercise for editing - thankfully I spent all day Friday doing the edit chapter & had something to work from!  This is a test on all the functionality of my journal.  This entry will be called with all the functions built.  I will filter the entries by mood, then edit, and finally save.  The next entry will never be seen hopefully because it will be gibberish & then deleted.  Can't get the form to empty after save",
+      "moodId": 5,
+      "id": 10
+    },
+    {
+      "date": "2019-11-03",
+      "conceptsCovered": "edit and empty form",
+      "content": "completed edit portion and emptied form fields upon submit",
+      "moodId": 3,
+      "id": 11
+    },
+    {
+      "date": "2019-11-05",
+      "conceptsCovered": "ERD ",
+      "content": "completed exercise on ERD, the extra link for embed & expand really helped.  Also cleaned up early journal functions into correct modules and made the main.js much cleaner **test on event handler function - testing fix on event handler error**",
+      "moodId": 3,
+      "id": 12
+    },
+    {
+      "date": "2019-11-08",
+      "conceptsCovered": "Nutshell",
+      "content": "group project for nutshell - pair coded first item for mvp - will complete functionality on monday",
       "moodId": 4,
-      "id": 3
+      "id": 13
+    },
+    {
+      "date": "2019-11-03",
+      "conceptsCovered": "edit and empty ",
+      "content": "completed edit portion and emptied form fields upon submit",
+      "moodId": 3,
+      "id": 14
+    },
+    {
+      "date": "2019-10-14",
+      "conceptsCovered": "loops, concatenation, and back tic syntax",
+      "content": "built a sentence from individual words in an array.  also added information into the sentence using javascript.  **testing functionality of all event listeners**",
+      "moodId": 2,
+      "id": 15
+    },
+    {
+      "date": "2019-10-14",
+      "conceptsCovered": "accessing objects",
+      "content": "using dot and bracket notation how to access deeper elements of an array of objects.  also utilized loops both for, and for in to get info to assist with this.  ****edit button test***",
+      "moodId": 4,
+      "id": 16
+    },
+    {
+      "date": "2019-10-31",
+      "conceptsCovered": "dynamic html",
+      "content": "Long 3 days - but journal is now dynamically populated, functions are split between modules & imported/exported correctly.***please don't be the last list item!***",
+      "moodId": 1,
+      "id": 17
+    },
+    {
+      "date": "2019-11-20",
+      "conceptsCovered": "react and styling",
+      "content": "Worked on next 2 chapters in React, and also began styling my journal with bootstrap & CSS.",
+      "moodId": 1,
+      "id": 18
+    },
+    {
+      "date": "2019-11-25",
+      "moodId": 3,
+      "conceptsCovered": "react",
+      "content": "using expand/embed and how to dynamically populate a field for drop down menu",
+      "id": 19
     }
   ]
 }
