@@ -28,5 +28,14 @@ export default {
   getMoods() {
     return fetch(`${remoteURL}/moods`)
     .then(result => result.json())
+  },
+  update(editedEntry, id) {
+    return fetch(`${remoteURL}/entries/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedEntry)
+    }).then(data => data.json());
   }
 }

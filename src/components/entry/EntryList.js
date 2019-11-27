@@ -49,6 +49,7 @@ class EntryList extends Component {
                             key={entry.id}
                             entry={entry}
                             deleteEntry={this.deleteEntry}
+                            {...this.props}
                         />)}
                 </div>
             </>

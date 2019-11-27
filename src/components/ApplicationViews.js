@@ -4,6 +4,7 @@ import Home from './home/Home'
 import EntryList from './entry/EntryList'
 import EntryDetail from './entry/EntryDetail'
 import EntryForm from './entry/EntryForm'
+import EntryEditForm from './entry/EntryEditForm'
 import Login from './auth/Login'
 
 class ApplicationViews extends Component {
@@ -24,7 +25,7 @@ class ApplicationViews extends Component {
                 {/* Make sure you add the `exact` attribute here */}
                 <Route exact path="/entries" render={(props) => {
                     if (this.isAuthenticated()) {
-                    return <EntryList {...props} />
+                        return <EntryList {...props} />
                     } else {
                         return <Redirect to="/login" />
                     }
@@ -34,7 +35,13 @@ class ApplicationViews extends Component {
                     return <EntryForm {...props} />
                 }} />
 
-                <Route path="/entries/:entryId(\d+)" render={(props) => {
+                <Route
+                    path="/entries/:entryId(\d+)/edit" render={props => {
+                        return <EntryEditForm {...props} />
+                    }}
+                />
+
+                <Route exact path="/entries/:entryId(\d+)" render={(props) => {
                     // Pass the entryId to the AnimalDetailComponent
                     return <EntryDetail entryId={parseInt(props.match.params.entryId)} {...props} />
                 }} />
