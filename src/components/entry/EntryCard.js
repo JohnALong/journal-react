@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 class EntryCard extends Component {
     render() {
-        console.log("entry card", this.props)
         return (
             <div className="card">
                 <div className="card-content">

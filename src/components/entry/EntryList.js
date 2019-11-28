@@ -7,6 +7,7 @@ class EntryList extends Component {
     //define what this component needs to render
     state = {
         entries: [],
+        moods: []
     }
 
     componentDidMount() {
@@ -16,6 +17,18 @@ class EntryList extends Component {
             .then((entries) => {
                 this.setState({
                     entries: entries
+                })
+            })
+        APIManager.getMoods()
+            .then(moods => this.setState({ moods: moods }))
+    }
+
+    filterEntries = event => {
+        console.log("event in filterEntries", event.target.value)
+        APIManager.filterByMood(event.target.value)
+            .then((newEntries) => {
+                this.setState({
+                    entries: newEntries
                 })
             })
     }
@@ -34,6 +47,7 @@ class EntryList extends Component {
 
     render() {
         console.log("Entry LIST: Render");
+        console.log("list render", this.state.moods)
 
         return (
             <>
@@ -43,6 +57,16 @@ class EntryList extends Component {
                         onClick={() => { this.props.history.push("/entries/new") }}>
                         New Entry</button>
                 </section>
+                <label>Select mood to filter entries</label>
+                <select className="form-control" id="moodId"
+                    value={this.state.moodId}
+                    onChange={this.filterEntries}
+                >
+                    {this.state.moods.map(mood =>
+                        <option key={mood.id} value={mood.id}>{mood.label}
+                        </option>
+                    )}
+                </select>
                 <div className="container-cards">
                     {this.state.entries.map(entry =>
                         <EntryCard

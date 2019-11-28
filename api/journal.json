@@ -2,23 +2,23 @@
   "moods": [
     {
       "id": 1,
-      "label": "exhausted"
+      "label": "Tired"
     },
     {
       "id": 2,
-      "label": "BrightEyed"
+      "label": "Excited"
     },
     {
       "id": 3,
-      "label": "amazed"
+      "label": "Amazed"
     },
     {
       "id": 4,
-      "label": "nervous"
+      "label": "Nervous"
     },
     {
       "id": 5,
-      "label": "dejected"
+      "label": "Stressed"
     }
   ],
   "entries": [

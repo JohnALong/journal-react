@@ -37,5 +37,10 @@ export default {
       },
       body: JSON.stringify(editedEntry)
     }).then(data => data.json());
+  },
+  filterByMood(filterMood) {
+    console.log("url string", `${remoteURL}/entries?&_expand=mood&moodId=${filterMood}`, filterMood)
+    return fetch(`${remoteURL}/entries?&_expand=mood&moodId=${filterMood}`)
+    .then(response => response.json())
   }
 }
