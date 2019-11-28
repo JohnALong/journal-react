@@ -7,7 +7,9 @@ class EntryList extends Component {
     //define what this component needs to render
     state = {
         entries: [],
-        moods: []
+        moods: [],
+        search: "",
+        loadingStatus: false
     }
 
     componentDidMount() {
@@ -16,7 +18,8 @@ class EntryList extends Component {
         APIManager.getAll()
             .then((entries) => {
                 this.setState({
-                    entries: entries
+                    entries: entries,
+                    loadingStatus: false
                 })
             })
         APIManager.getMoods()
@@ -33,6 +36,23 @@ class EntryList extends Component {
             })
     }
 
+    searchEntries = () => {
+        console.log("event in searchEntries", this.state.search)
+        APIManager.searchEntry(this.state.search)
+            .then((newEntries) => {
+                this.setState({
+                    entries: newEntries
+                })
+            })
+    }
+
+    handleFieldChange = event => {
+        const stateToChange = {};
+        stateToChange[event.target.id] = event.target.value;
+        console.log("state to change", stateToChange)
+        this.setState(stateToChange)
+    }
+
     deleteEntry = id => {
         APIManager.delete(id)
             .then(() => {
@@ -47,7 +67,7 @@ class EntryList extends Component {
 
     render() {
         console.log("Entry LIST: Render");
-        console.log("list render", this.state.moods)
+        console.log("list render", this.state.search )
 
         return (
             <>
@@ -67,6 +87,16 @@ class EntryList extends Component {
                         </option>
                     )}
                 </select>
+                <form id="searchForm">
+                <label className="searchBox" >Search entries by keyword</label>
+                <input
+                    type="text"
+                    value={this.state.handleFieldChange}
+                    onChange={this.handleFieldChange} id="search"
+                    placeholder="Search entries"></input>
+                <button onClick={this.searchEntries}
+                    disabled={this.state.loadingStatus} type="button">Search</button>
+                    </form>
                 <div className="container-cards">
                     {this.state.entries.map(entry =>
                         <EntryCard

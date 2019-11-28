@@ -42,5 +42,9 @@ export default {
     console.log("url string", `${remoteURL}/entries?&_expand=mood&moodId=${filterMood}`, filterMood)
     return fetch(`${remoteURL}/entries?&_expand=mood&moodId=${filterMood}`)
     .then(response => response.json())
-  }
+  },
+  searchEntry: (searchAll) => {
+    return fetch(`${remoteURL}/entries?&_expand=mood&q=${searchAll}`)
+        .then(entries => entries.json())
+}
 }
