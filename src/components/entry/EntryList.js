@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 //import the components we will need
 import EntryCard from './EntryCard'
 import APIManager from '../../modules/APIManager'
+import "./Entry.css"
+import { Container, Row, Form, Button, Col } from 'react-bootstrap'
 
 class EntryList extends Component {
     //define what this component needs to render
@@ -67,45 +69,55 @@ class EntryList extends Component {
 
     render() {
         console.log("Entry LIST: Render");
-        console.log("list render", this.state.search )
+        console.log("list render", this.state.search)
 
         return (
             <>
-                <section className="section-content">
-                    <button type="button"
-                        className="btn"
-                        onClick={() => { this.props.history.push("/entries/new") }}>
-                        New Entry</button>
-                </section>
-                <label>Select mood to filter entries</label>
-                <select className="form-control" id="moodId"
-                    value={this.state.moodId}
-                    onChange={this.filterEntries}
-                >
-                    {this.state.moods.map(mood =>
-                        <option key={mood.id} value={mood.id}>{mood.label}
-                        </option>
-                    )}
-                </select>
-                <form id="searchForm">
-                <label className="searchBox" >Search entries by keyword</label>
-                <input
-                    type="text"
-                    value={this.state.handleFieldChange}
-                    onChange={this.handleFieldChange} id="search"
-                    placeholder="Search entries"></input>
-                <button onClick={this.searchEntries}
-                    disabled={this.state.loadingStatus} type="button">Search</button>
-                    </form>
-                <div className="container-cards">
-                    {this.state.entries.map(entry =>
-                        <EntryCard
-                            key={entry.id}
-                            entry={entry}
-                            deleteEntry={this.deleteEntry}
-                            {...this.props}
-                        />)}
-                </div>
+                <Form>
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>Select mood to filter entries</Form.Label>
+                            <select className="form-control" id="moodId"
+                                value={this.state.moodId}
+                                onChange={this.filterEntries}
+                            >
+                                {this.state.moods.map(mood =>
+                                    <option key={mood.id} value={mood.id}>{mood.label}
+                                    </option>
+                                )}
+                            </select>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <section className="section-content">
+                                <Button variant="primary" type="button"
+                                    className="btn"
+                                    onClick={() => { this.props.history.push("/entries/new") }}>
+                                    New Entry</Button>
+                            </section>
+                        </Form.Group>
+                        <Form.Group as={Col} id="searchForm">
+                            <Form.Label className="searchBox" >Search entries by keyword</Form.Label>
+                            <input
+                                type="text"
+                                value={this.state.handleFieldChange}
+                                onChange={this.handleFieldChange} id="search"
+                                placeholder="Search entries"></input>
+                            <button onClick={this.searchEntries}
+                                disabled={this.state.loadingStatus} type="button">Search</button>
+                        </Form.Group>
+                    </Form.Row>
+                </Form>
+                <Container>
+                    <Row className="container-cards">
+                        {this.state.entries.map(entry =>
+                            <EntryCard
+                                key={entry.id}
+                                entry={entry}
+                                deleteEntry={this.deleteEntry}
+                                {...this.props} 
+                            />)}
+                    </Row>
+                </Container>
             </>
         )
     }

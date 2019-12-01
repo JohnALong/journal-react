@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
+import { Card, Button } from 'react-bootstrap';
+import "./Entry.css"
 
 class EntryCard extends Component {
     render() {
         return (
-            <div className="card">
-                <div className="card-content">
-                    <h2>Date of Entry: <span className="card-entrydate">{this.props.entry.date}</span></h2>
-                    <p>Mood of day: {this.props.entry.mood.label}</p>
-                    <p>Concepts covered: {this.props.entry.conceptsCovered}</p>
-                    <Link to={`/entries/${this.props.entry.id}`}><button>Details</button></Link>
-                </div>
-            </div>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body className="card">
+                    <Card.Title>Date of Entry: <span className="card-entrydate">{this.props.entry.date}</span></Card.Title>
+                    <Card.Text>Mood of day: {this.props.entry.mood.label}</Card.Text>
+                    <Card.Text>Concepts covered: {this.props.entry.conceptsCovered}</Card.Text>
+                    <Link to={`/entries/${this.props.entry.id}`}><Button variant="primary">Details</Button></Link>
+                </Card.Body>
+            </Card>
         );
     }
 }

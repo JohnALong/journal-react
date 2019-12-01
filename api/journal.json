@@ -65,18 +65,18 @@
       "id": 6
     },
     {
+      "id": 8,
       "date": "2019-10-31",
-      "conceptsCovered": "dynamic html",
-      "content": "Long 3 days - but journal is now dynamically populated, functions are split between modules & imported/exported correctly.",
       "moodId": 1,
-      "id": 8
+      "conceptsCovered": "dynamic html",
+      "content": "Long 3 days - but journal is now dynamically populated, functions are split between modules & imported/exported correctly."
     },
     {
+      "id": 10,
       "date": "2019-11-03",
-      "conceptsCovered": "editing entries take 10",
-      "content": "working on completing journal exercise for editing - thankfully I spent all day Friday doing the edit chapter & had something to work from!  This is a test on all the functionality of my journal.  This entry will be called with all the functions built.  I will filter the entries by mood, then edit, and finally save.  The next entry will never be seen hopefully because it will be gibberish & then deleted.  Can't get the form to empty after save",
       "moodId": 5,
-      "id": 10
+      "conceptsCovered": "editing entries take 10",
+      "content": "working on completing journal exercise for editing - thankfully I spent all day Friday doing the edit chapter & had something to work from!  This is a test on all the functionality of my journal.  This entry will be called with all the functions built.  I will filter the entries by mood, then edit, and finally save.  The next entry will never be seen hopefully because it will be gibberish & then deleted.  Can't get the form to empty after save"
     },
     {
       "date": "2019-11-03",
@@ -114,18 +114,11 @@
       "id": 15
     },
     {
+      "id": 16,
       "date": "2019-10-14",
-      "conceptsCovered": "accessing objects",
-      "content": "using dot and bracket notation how to access deeper elements of an array of objects.  also utilized loops both for, and for in to get info to assist with this.  ****edit button test***",
       "moodId": 4,
-      "id": 16
-    },
-    {
-      "date": "2019-10-31",
-      "conceptsCovered": "dynamic html",
-      "content": "Long 3 days - but journal is now dynamically populated, functions are split between modules & imported/exported correctly.***please don't be the last list item!***",
-      "moodId": 1,
-      "id": 17
+      "conceptsCovered": "accessing objects",
+      "content": "using dot and bracket notation how to access deeper elements of an array of objects.  also utilized loops both for, and for in to get info to assist with this.  ****edit button test***"
     },
     {
       "date": "2019-11-20",
@@ -140,6 +133,13 @@
       "moodId": 3,
       "conceptsCovered": "react edit",
       "content": "using expand/embed and how to dynamically populate a field for drop down menu"
+    },
+    {
+      "date": "2019-11-30",
+      "moodId": 1,
+      "conceptsCovered": "React Bootstrap and CSS",
+      "content": "Finishing up my journal in React, and working on styling the individual components. Today, I'm experimenting with React-Bootstrap and using CSS for fine tuning the styling. Trying to incorporate all the styles I will need for my capstone.",
+      "id": 23
     }
   ]
 }

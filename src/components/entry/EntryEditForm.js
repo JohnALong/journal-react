@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../modules/APIManager"
 import "./EntryForm.css"
+import { Button, Form, FormControl } from 'react-bootstrap';
 
 class EntryEditForm extends Component {
     //set the initial state
@@ -53,16 +54,19 @@ console.log("edited entry", editedEntry)
     render() {
         return (
             <>
-                <form>
+                <Form>
                     <fieldset>
                         <div className="formgrid">
+                        <Form.Group className="small-boxes">
                             <label htmlFor="date">Date of entry</label>
                             <input
                                 type="date" value={this.state.date}
                                 required
                                 onChange={this.handleFieldChange}
                                 id="date" />
-                            <label htmlFor="mood">Mood of the Day</label>
+                                </Form.Group>
+                                <Form.Group className="small-boxes">
+                            <Form.Label htmlFor="mood">Mood of the Day</Form.Label>
                             <select className="form-control" id="moodId"
                                 value={this.state.moodId}
                                 onChange={this.handleFieldChange}
@@ -72,28 +76,33 @@ console.log("edited entry", editedEntry)
                                     </option>
                                 )}
                             </select>
-                            <label htmlFor="conceptsCovered">Concepts Covered</label>
-                            <input
+                            </Form.Group>
+                            <Form.Group className="small-boxes">
+                            <Form.Label htmlFor="conceptsCovered">Concepts Covered</Form.Label>
+                            <FormControl
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
                                 id="conceptsCovered"
                                 value={this.state.conceptsCovered} />
-                            <label htmlFor="content">Entry Contents</label>
-                            <textarea required className="form-control"
+                                </Form.Group>
+                                <Form.Group className="large-boxes">
+                            <Form.Label htmlFor="content">Entry Contents</Form.Label>
+                            <FormControl as="textarea" required className="form-control"
                                 value={this.state.content}
                                 onChange={this.handleFieldChange}
-                                name="contents" id="content" rows="6"></textarea>
+                                name="contents" id="content" rows="6"></FormControl>
+                                </Form.Group>
                         </div>
-                        <div className="alignRight">
-                            <button
-                                type="button"
+                        <div>
+                            <Button
+                                type="button" className="float-right"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.updateExistingEntry}
-                            >Submit</button>
+                            >Submit</Button>
                         </div>
                     </fieldset>
-                </form>
+                </Form>
             </>
         );
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager';
 import './EntryDetail.css'
+import { Button, Card } from 'react-bootstrap';
 
 class EntryDetail extends Component {
 
@@ -38,20 +39,23 @@ class EntryDetail extends Component {
 
   render() {
     return (
-      <div className="card">
+      <Card style={{ width: '18rem' }} 
+      className="card card-detail">
         <div className="card-content">
-          <h3>Date: <span style={{ color: 'darkslategrey' }}>{this.state.date}</span></h3>
-          <p>Mood of the day: {this.state.mood}</p>
-          <p>Concepts Covered: {this.state.conceptsCovered}</p>
-          <p>Entry:</p>
-          <p>{this.state.content}</p>
-          <button type="button"
-            onClick={() => { this.props.history.push(`/entries/${this.state.id}/edit`) }}>Edit</button>
-          <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Delete</button>
+          <Card.Img variant="top" src={require("../../images/NSS2.png")} />
+          <Card.Header as="h3">Date: <span>{this.state.date}</span></Card.Header>
+          <Card.Body>
+          <Card.Title>Mood of the day: {this.state.mood}</Card.Title>
+          <Card.Title>Concepts Covered: {this.state.conceptsCovered}</Card.Title>
+          <Card.Title>Entry:</Card.Title>
+          <Card.Text>{this.state.content}</Card.Text>
+          <Button className="btn" variant="primary"
+            onClick={() => { this.props.history.push(`/entries/${this.state.id}/edit`) }}>Edit</Button>
+          <Button className="btn" variant="secondary" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Delete</Button>
+        </Card.Body>
         </div>
-      </div>
+      </Card>
     );
   }
 }
-
 export default EntryDetail;
