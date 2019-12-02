@@ -1,0 +1,20 @@
+body {
+    background-image: url("../../images/soft-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cards {
+    margin-right: 50px;
+}
+.card {
+    background-image: url("../../images/old-parchment.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

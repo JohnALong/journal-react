@@ -4,7 +4,9 @@ small {
   
   header {
     background-color:darkblue;
-    border: cornflowerblue solid 3px;
+    background-image: url("../../images/starry-night.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .site-title {
@@ -25,7 +27,7 @@ small {
     font-size: 1.5em;
     color: cornsilk;
     box-sizing: border-box;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     list-style-type: none;
   }
   
